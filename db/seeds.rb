@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+tutors = Tutor.create([
+  {
+    name: "Bob Ross",
+    image_url: "https://www.bobross.com/content/bob_ross_img.png"
+  }
+])
+
+reviews = Review.create([
+  {
+    title: "masterful teacher",
+    description: "I paint trees real good now",
+    score: 5,
+    tutor: tutors.first
+  }
+])
