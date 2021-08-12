@@ -47,7 +47,7 @@ module Api
       private 
 
       def tutor_params
-        params.require(:tutor).permit(:name, :image_url)
+        params.require(:tutor).permit(:name, :image_url, :bio)
       end
 
       def options

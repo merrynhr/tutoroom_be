@@ -9,7 +9,8 @@
 tutors = Tutor.create([
   {
     name: "Bob Ross",
-    image_url: "https://www.bobross.com/content/bob_ross_img.png"
+    image_url: "https://www.bobross.com/content/bob_ross_img.png",
+    bio: "let's paint some trees"
   }
 ])
 
