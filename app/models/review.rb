@@ -1,3 +1,3 @@
-class Review < ApplicationRecord
-  belongs_to :tutor
-end
+# class Review < ApplicationRecord
+#   belongs_to :tutor
+# end
