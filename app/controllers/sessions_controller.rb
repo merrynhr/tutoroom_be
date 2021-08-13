@@ -4,16 +4,8 @@ class SessionsController < Devise::SessionsController
 
 
   def create
-    p '000000000'
-    p params[:email]
-    p '111111111'
-    p params
-    p '222222222'
-
     user = User.find_by_email(params[:email])
-    p user 
-    p '333333333'
-    p user.valid_password?(params[:password])
+
     if user && user.valid_password?(params[:password])
       @current_user = user
     else
