@@ -50,11 +50,6 @@ module Api
         params.require(:tutor).permit(:name, :image_url, :bio)
       end
 
-      # def options
-      #   provide options for adding to Tutor
-      #   @options ||= { include: %i[reviews]}
-      # end
-
     end
   end
 end
