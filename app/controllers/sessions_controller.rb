@@ -1,19 +1,20 @@
 class SessionsController < Devise::SessionsController
-  # protect_from_forgery with: :null_session
-  skip_before_action :verify_authenticity_token
+  # protect_from_forgery with: :null_session, if: ->{request.format.json?}
+  # skip_before_action :verify_authenticity_token
 
 
   def create
-    p sign_in_params[:email]
-    p "hello"
-    p sign_in_params
+    p '000000000'
+    p params[:email]
+    p '111111111'
     p params
+    p '222222222'
 
-
-    user = User.find_by_email(sign_in_params[:email])
+    user = User.find_by_email(params[:email])
     p user 
-    p user.valid_password?(sign_in_params[:password])
-    if user && user.valid_password?(sign_in_params[:password])
+    p '333333333'
+    p user.valid_password?(params[:password])
+    if user && user.valid_password?(params[:password])
       @current_user = user
     else
       render json: { errors: { 'email or password' => ['is invalid'] } }, status: :unprocessable_entity
