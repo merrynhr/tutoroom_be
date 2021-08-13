@@ -1,5 +1,5 @@
 class TutorSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name, :image_url, :slug, :bio
+  attributes :name, :image_url, :slug, :bio, :subject
 
 end
