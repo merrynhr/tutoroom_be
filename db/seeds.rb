@@ -42,12 +42,3 @@ tutors = Tutor.create([
 
 
 
-# reviews = Review.create([
-#   {
-#     title: "masterful teacher",
-#     description: "I paint trees real good now",
-#     score: 5,
-#     tutor: tutors.first
-#   }
-# ])
-
