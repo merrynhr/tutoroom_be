@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'pages#index'
+  # do we need this?
+  #root 'pages#index'
 
   namespace :api do
     namespace :v1 do 
@@ -8,5 +9,5 @@ Rails.application.routes.draw do
     end
   end
 
-  get '*path', to: 'pages#index', via: :all
+  #get '*path', to: 'pages#index', via: :all
 end
