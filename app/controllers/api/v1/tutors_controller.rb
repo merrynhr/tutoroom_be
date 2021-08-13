@@ -5,13 +5,13 @@ module Api
       def index
         tutors = Tutor.all
 
-        render json: TutorSerializer.new(tutors, options).serialized_json
+        render json: TutorSerializer.new(tutors).serialized_json
       end
 
       def show 
         tutor = Tutor.find_by(slug: params[:slug])
 
-        render json: TutorSerializer.new(tutor, options).serialized_json
+        render json: TutorSerializer.new(tutor).serialized_json
       end
 
       def create
@@ -28,7 +28,7 @@ module Api
         tutor = Tutor.find_by(slug: params[:slug])
 
         if tutor.update(tutor_params)
-          render json: TutorSerializer.new(tutor, options).serialized_json
+          render json: TutorSerializer.new(tutor).serialized_json
         else    
           render json: { error: tutor.errors.messages }, status: 422
         end
@@ -48,11 +48,6 @@ module Api
 
       def tutor_params
         params.require(:tutor).permit(:name, :image_url, :bio)
-      end
-
-      def options
-        #provide options for adding to Tutor
-        @options ||= { include: %i[reviews]}
       end
 
     end

@@ -15,16 +15,6 @@ ActiveRecord::Schema.define(version: 2021_08_12_134452) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "reviews", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.integer "score"
-    t.bigint "tutor_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["tutor_id"], name: "index_reviews_on_tutor_id"
-  end
-
   create_table "tutors", force: :cascade do |t|
     t.string "name"
     t.string "image_url"
@@ -33,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_08_12_134452) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "bio"
   end
+
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -51,4 +42,5 @@ ActiveRecord::Schema.define(version: 2021_08_12_134452) do
   end
 
   add_foreign_key "reviews", "tutors"
+
 end
