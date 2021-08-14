@@ -1,6 +1,13 @@
  require 'rails_helper'
 
  RSpec.describe Api::V1::TutorsController do
+  let(:valid_attributes) {
+    skip("Add a hash of attributes valid for your model")
+  }
+
+  let(:invalid_attributes) {
+    skip("Add a hash of attributes invalid for your model")
+  }
 
   describe "GET #index" do
     before do
@@ -13,9 +20,35 @@
 
   it "JSON body response contains expected tutor attributes" do
     json_response = JSON.parse(response.body)
-    #expect(json_response).to match_array([:id, :name, :image_url, :slug, :created_at, :updated_at, :bio])
+    #expect(json_response).to match_array([:id, :name, :image_url, :created_at, :updated_at, :bio])
     expect(json_response).to match_array({'status' => 'ok'})
   end
  end
+
+ describe "GET /api/v1/tutors#index " do
+  it "responds with 200" do
+    get '/api/v1/tutor'
+    expect(response).to have_http_status(200)
+  end
 end
+
+describe "POST /api/v1/tutors#create " do
+  context "with valid parameters" do
+    it "creates a new tutor" do
+      expect{
+         post :create, params: { post: valid_attributes }  
+      }.to change(Tutor, :count).by(1)
+   end
+end
+
+  context "with invalid parameters" do
+    it "does not create a new tutor" do
+      expect{
+        post :create, params: { post: valid_attributes }  
+       }.to change(Tutor, :count).by(0)
+      end
+    end
+  end
+end
+
 
