@@ -3,14 +3,13 @@ module Api
     class TutorsController < ApplicationController
       protect_from_forgery with: :null_session
       def index
-        tutors = Tutor.all
-
+        tutors = Tutor.joins(:user).where(users: { teacher: true })
+        # tutors = Tutor.all
         render json: TutorSerializer.new(tutors).serialized_json
       end
 
       def show 
         tutor = Tutor.find_by(id: params[:id])
-
         render json: TutorSerializer.new(tutor).serialized_json
       end
 
