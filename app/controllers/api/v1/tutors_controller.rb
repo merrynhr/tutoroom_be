@@ -8,7 +8,7 @@ module Api
         render json: TutorSerializer.new(tutors).serialized_json
       end
 
-      def show 
+      def show
         tutor = Tutor.find_by(id: params[:id])
 
         render json: TutorSerializer.new(tutor).serialized_json
@@ -19,8 +19,8 @@ module Api
 
         if tutor.save
           render json: TutorSerializer.new(tutor).serialized_json
-        else    
-          render json: { error: tutor.errors.messages }, status: 422
+        else
+          render json: { error: tutor.errors.messages }, status: :unprocessable_entity
         end
       end
 
@@ -29,8 +29,8 @@ module Api
 
         if tutor.update(tutor_params)
           render json: TutorSerializer.new(tutor).serialized_json
-        else    
-          render json: { error: tutor.errors.messages }, status: 422
+        else
+          render json: { error: tutor.errors.messages }, status: :unprocessable_entity
         end
       end
 
@@ -39,17 +39,16 @@ module Api
 
         if tutor.destroy
           head :no_content
-        else    
-          render json: { error: tutor.errors.messages }, status: 422
+        else
+          render json: { error: tutor.errors.messages }, status: :unprocessable_entity
         end
       end
 
-      private 
+      private
 
       def tutor_params
-        params.require(:tutor).permit(:name, :image_url, :bio, :subject, :email) 
+        params.require(:tutor).permit(:name, :image_url, :bio, :subject, :email)
       end
-
     end
   end
 end
