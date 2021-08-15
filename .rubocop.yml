@@ -1,1 +1,27 @@
 require: rubocop-rails
+# Rails
+# =====
+#
+# Here are some additions to Scaffolint for Rails apps.
+#
+# Enable the Rails rules included in the rubocop-rails gem.
+
+# Exclusions
+# ==========
+#
+# Rails has powerful generators.
+#
+# Some auto-generated files are edited frequently. We want to lint them,
+# so let's avoid adding them to this list.
+# e.g. controllers, models, views
+#
+# Other auto-generated files are usually not edited afterwards.
+# There's almost zero value in linting them, so let's exclude them.
+# e.g. binstubs, config, migrations
+
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'vendor/**/*'
