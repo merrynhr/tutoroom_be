@@ -9,7 +9,7 @@ module Api
       end
 
       def show 
-        tutor = Tutor.find_by(slug: params[:slug])
+        tutor = Tutor.find_by(id: params[:id])
 
         render json: TutorSerializer.new(tutor).serialized_json
       end
@@ -25,7 +25,7 @@ module Api
       end
 
       def update
-        tutor = Tutor.find_by(slug: params[:slug])
+        tutor = Tutor.find_by(id: params[:id])
 
         if tutor.update(tutor_params)
           render json: TutorSerializer.new(tutor).serialized_json
@@ -35,7 +35,7 @@ module Api
       end
 
       def destroy
-        tutor = Tutor.find_by(slug: params[:slug])
+        tutor = Tutor.find_by(id: params[:id])
 
         if tutor.destroy
           head :no_content
@@ -47,7 +47,7 @@ module Api
       private 
 
       def tutor_params
-        params.require(:tutor).permit(:name, :image_url, :bio)
+        params.require(:tutor).permit(:name, :image_url, :bio, :subject, :email) 
       end
 
     end
