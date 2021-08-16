@@ -14,6 +14,7 @@ module Api
       end
 
       def create
+
         tutor = Tutor.new(tutor_params)
 
         if tutor.save

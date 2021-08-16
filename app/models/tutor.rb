@@ -1,10 +1,10 @@
 class Tutor < ApplicationRecord
   
-  # before_create :slugify
+  after_initialize :set_defaults
 
-  # def slugify
-  #   self.slug = name.parameterize
-  # end
+  def set_defaults
+    self.image_url ||= "avatardefault_92824.png"
+  end
 
   belongs_to :user
 
