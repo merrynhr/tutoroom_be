@@ -27,6 +27,7 @@ gem 'fast_jsonapi', '~> 1.5'
 gem 'devise'
 gem 'jwt'
 gem 'rack-cors'
+gem 'paperclip', '~> 6.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
