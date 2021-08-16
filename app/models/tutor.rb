@@ -1,7 +1,10 @@
 class Tutor < ApplicationRecord
   
-  validates :image_url, attachment_presence: true
-  has_attached_file :image_url, default_url: "avatardefault_92824.png"
+  after_initialize :set_defaults
+
+  def set_defaults
+    self.image_url ||= "avatardefault_92824.png"
+  end
 
   belongs_to :user
 
