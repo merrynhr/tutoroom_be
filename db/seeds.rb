@@ -6,27 +6,99 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+users = User.create([
+  {
+    email: "Bob@email.com",
+    password: "password1",
+    password_confirmation: "password1",
+    reset_password_token: nil,
+    reset_password_sent_at: nil, 
+    remember_created_at: nil,
+    username: "BobRoss",
+    subject: "Painting",
+    teacher: true
+  },
+  {
+    username: "DeborahMeaden",
+    subject: "Business",
+    teacher: true,
+    password: "password2",
+    password_confirmation: "password2",
+    reset_password_token: nil,
+    reset_password_sent_at: nil, 
+    remember_created_at: nil,
+    email: "Debs@email.com"
+  },
+  {
+    username: "DavidAttenborough",
+    subject: "conservation",
+    teacher: true,
+    password: "password3",
+    password_confirmation: "password3",
+    reset_password_token: nil,
+    reset_password_sent_at: nil, 
+    remember_created_at: nil,
+    email: "Dave@email.com"
+  },
+  {
+    username: "tutor4",
+    subject: "Maths",
+    teacher: true,
+    password: "password4",
+    password_confirmation: "password4",
+    reset_password_token: nil,
+    reset_password_sent_at: nil, 
+    remember_created_at: nil,
+    email: "4@email.com"
+  },
+  {
+    username: "learner1",
+    subject: "English",
+    teacher: false,
+    password: "password5",
+    password_confirmation: "password5",
+    reset_password_token: nil,
+    reset_password_sent_at: nil, 
+    remember_created_at: nil,
+    email: "5@email.com"
+  },
+  {
+    username: "learner2",
+    subject: "History",
+    teacher: false,
+    password: "password6",
+    password_confirmation: "password6",
+    reset_password_token: nil,
+    reset_password_sent_at: nil, 
+    remember_created_at: nil,
+    email: "6@email.com"
+  },
+])
+
 tutors = Tutor.create([
   {
     name: "Bob Ross",
     subject: "Painting",
     image_url: "https://www.bobross.com/content/bob_ross_img.png",
     bio: "let's paint some trees",
-    email: "Bob@email.com"
+    email: "Bob@email.com",
+    user_id: 1
   },
   {
     name: "Deborah Meaden",
     subject: "Business",
     image_url: "https://www.deborahmeaden.com/images/deborah_cutout.png",
     bio: "good stuff will happen if you learn with me",
-    email: "Debs@email.com"
+    email: "Debs@email.com",
+    user_id: 2
   },
   {
     name: "David Attenborough",
     subject: "conservation",
     image_url: "https://attenboroughfilm.com/wp-content/uploads/2020/09/image-da-clean-poster@2x.jpg",
     bio: "learn to build a better future",
-    email: "Dave@email.com"
+    email: "Dave@email.com",
+    user_id: 3
   },
 
   {
@@ -34,22 +106,29 @@ tutors = Tutor.create([
     subject: "Maths",
     image_url: "https://attenboroughfilm.com/wp-content/uploads/2020/09/image-da-clean-poster@2x.jpg",
     bio: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
-    email: "4@email.com"
+    email: "4@email.com",
+    user_id: 4
   },
   {
-    name: "tutor 5",
+    name: "learner 1",
     subject: "English",
     image_url: "https://attenboroughfilm.com/wp-content/uploads/2020/09/image-da-clean-poster@2x.jpg",
     bio: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
-    email: "5@email.com"
+    email: "5@email.com",
+    user_id: 5
   },
   {
-    name: "tutor 6",
+    name: "learner 2",
     subject: "History",
     image_url: "https://attenboroughfilm.com/wp-content/uploads/2020/09/image-da-clean-poster@2x.jpg",
     bio: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
-    email: "6@email.com"
+    email: "6@email.com",
+    user_id: 6
   }
 ])
 
+
+  
+  
+  
 

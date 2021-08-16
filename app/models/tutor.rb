@@ -6,6 +6,8 @@ class Tutor < ApplicationRecord
   #   self.slug = name.parameterize
   # end
 
+  belongs_to :user
+
 
 
 end
