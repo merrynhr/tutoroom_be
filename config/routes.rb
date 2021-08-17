@@ -5,6 +5,11 @@ Rails.application.routes.draw do
                       path_names: { sign_in: :login }
     
   resource :user, only: [:show, :update]
+  resources :sessions, :only => [:create, :destroy]
+  end
+
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
 

@@ -1,6 +1,8 @@
 class User < ApplicationRecord
 
   has_one :tutor
+  accepts_nested_attributes_for :tutor
+  
 
   def generate_jwt
     JWT.encode({ id: id,
