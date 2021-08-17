@@ -7,6 +7,7 @@ class Tutor < ApplicationRecord
 
   def set_defaults
     self.image_url ||= "avatardefault_92824.png"
+    self.bio ||= ""
   end
 
   belongs_to :user
