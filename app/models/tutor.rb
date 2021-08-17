@@ -1,6 +1,7 @@
 class Tutor < ApplicationRecord
   
   # delegate :email, :email=, to: :user
+  belongs_to :user
 
 
   after_initialize :set_defaults
@@ -10,7 +11,6 @@ class Tutor < ApplicationRecord
     self.bio ||= ""
   end
 
-  belongs_to :user
 
 
 

@@ -1,13 +1,14 @@
 class User < ApplicationRecord
 
-  has_one :tutor#, dependent: :destory
+  has_one :tutor, dependent: :destroy
   after_create :init_tutor
-  # accepts_nested_attributes_for :tutor
-  # delegate :email, :email=, to: :tutor
+ 
 
   def init_tutor
-    self.create_tutor
+    self.create_tutor(email: email, name: fullname)
   end
+
+
 
   def generate_jwt
     JWT.encode({ id: id,

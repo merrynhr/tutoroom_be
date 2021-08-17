@@ -20,12 +20,3 @@ class UsersController < ApplicationController
   
 
 end
-
-# def update_info
-#   @user = User.find(params[:id])
-#   if @user.update(user_params)
-#     puts 'the user info successfully updated' #add whatever you want
-#   else
-#     puts 'failed'
-#   end
-# end
