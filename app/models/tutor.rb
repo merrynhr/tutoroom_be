@@ -1,5 +1,8 @@
 class Tutor < ApplicationRecord
   
+  # delegate :email, :email=, to: :user
+
+
   after_initialize :set_defaults
 
   def set_defaults
