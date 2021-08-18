@@ -14,12 +14,12 @@ users = User.create([
     reset_password_token: nil,
     reset_password_sent_at: nil, 
     remember_created_at: nil,
-    username: "BobRoss",
+    fullname: "BobRoss",
     subject: "Painting",
     teacher: true
   },
   {
-    username: "DeborahMeaden",
+    fullname: "DeborahMeaden",
     subject: "Business",
     teacher: true,
     password: "password2",
@@ -30,7 +30,7 @@ users = User.create([
     email: "Debs@email.com"
   },
   {
-    username: "DavidAttenborough",
+    fullname: "DavidAttenborough",
     subject: "conservation",
     teacher: true,
     password: "password3",
@@ -41,7 +41,7 @@ users = User.create([
     email: "Dave@email.com"
   },
   {
-    username: "tutor4",
+    fullname: "tutor4",
     subject: "Maths",
     teacher: true,
     password: "password4",
@@ -52,7 +52,7 @@ users = User.create([
     email: "4@email.com"
   },
   {
-    username: "learner1",
+    fullname: "learner1",
     subject: "English",
     teacher: false,
     password: "password5",
@@ -63,7 +63,7 @@ users = User.create([
     email: "5@email.com"
   },
   {
-    username: "learner2",
+    fullname: "learner2",
     subject: "History",
     teacher: false,
     password: "password6",
