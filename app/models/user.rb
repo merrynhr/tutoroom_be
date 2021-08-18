@@ -5,7 +5,7 @@ class User < ApplicationRecord
  
 
   def init_tutor
-    self.create_tutor(email: email, name: fullname)
+    self.create_tutor(email: email, name: fullname, subject: subject)
   end
 
 
