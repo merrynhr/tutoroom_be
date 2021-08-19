@@ -81,12 +81,12 @@ users = User.create([
     reset_password_sent_at: nil, 
     remember_created_at: nil,
     fullname: "Mike",
-    subject: "Education",
+    subject: "VScode shotcuts",
     teacher: true
   },
   {
     fullname: "Arif",
-    subject: "Education",
+    subject: "React JS",
     teacher: true,
     password: "password8",
     password_confirmation: "password8",
@@ -97,7 +97,7 @@ users = User.create([
   },
   {
     fullname: "Zsuzsanna",
-    subject: "Education",
+    subject: "Cooking",
     teacher: true,
     password: "password9",
     password_confirmation: "password9",
@@ -108,7 +108,7 @@ users = User.create([
   },
   {
     fullname: "Misha",
-    subject: "Education",
+    subject: "English",
     teacher: true,
     password: "password10",
     password_confirmation: "password10",
@@ -119,7 +119,7 @@ users = User.create([
   },
   {
     fullname: "Jenny",
-    subject: "Education",
+    subject: "Photography",
     teacher: true,
     password: "password11",
     password_confirmation: "password11",
@@ -130,7 +130,7 @@ users = User.create([
   },
   {
     fullname: "Merryn",
-    subject: "History",
+    subject: "Education",
     teacher: true,
     password: "password12",
     password_confirmation: "password12",
