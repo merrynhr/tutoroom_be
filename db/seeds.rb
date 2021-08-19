@@ -41,8 +41,8 @@ users = User.create([
     email: "Dave@email.com"
   },
   {
-    fullname: "tutor4",
-    subject: "Maths",
+    fullname: "Mr Bean",
+    subject: "Comedy",
     teacher: true,
     password: "password4",
     password_confirmation: "password4",
@@ -52,9 +52,9 @@ users = User.create([
     email: "4@email.com"
   },
   {
-    fullname: "learner1",
-    subject: "English",
-    teacher: false,
+    fullname: "Eóin Power",
+    subject: "Makers",
+    teacher: true,
     password: "password5",
     password_confirmation: "password5",
     reset_password_token: nil,
@@ -63,9 +63,9 @@ users = User.create([
     email: "5@email.com"
   },
   {
-    fullname: "learner2",
-    subject: "History",
-    teacher: false,
+    fullname: "Beyonce",
+    subject: "Fierceness",
+    teacher: true,
     password: "password6",
     password_confirmation: "password6",
     reset_password_token: nil,
