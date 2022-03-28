@@ -1,7 +1,7 @@
 # README
 
 Makers Academy - Week 11 & 12 Group Project
-A tutoring web application built using Ruby on Rails backend with React frontend, essentially 2 separate applications - backend, frontend. This app allows users to customise profiles and seek out learners and tutors across the globe with similar educational interests.
+A tutoring web application built using Ruby on Rails backend with React frontend, essentially 2 separate applications - backend, frontend. This app allows users to customise profiles and seek out learners and tutors across the globe with similar educational interests. This project was completed in less than two weeks and was intended to act as an MVP.
 
 Check out the frontend here: https://github.com/jen0828/tutoroom_fe
 
